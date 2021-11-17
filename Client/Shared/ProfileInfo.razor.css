@@ -1,4 +1,12 @@
-﻿img.profile-picture {
+﻿.wrapper {
+    display: flex;
+}
+
+.profile-picture {
+    flex-shrink: 0;
+}
+
+.profile-picture > img {
     height: 48px;
     width: 48px;
     border-radius: 50%;
@@ -7,12 +15,12 @@
 }
 
 .user-info {
-    /*display: none;*/
-    margin: auto 8px;
+    flex-grow: 1;
+    margin: auto 0 auto 8px;
     white-space: nowrap;
 }
 
-.profile-detail {
+.detail {
     font-size: 0.8em;
     opacity: 0.8;
 }

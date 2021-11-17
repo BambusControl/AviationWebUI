@@ -16,3 +16,8 @@
     right: 0.75rem;
     top: 0.5rem;
 }
+
+html {
+    --av-cl-shadow: rgba(0, 0, 0, 0.1);
+    --av-cl-border: #dee2e6
+}
