@@ -1,0 +1,132 @@
+@import "../wwwroot/css/globals";
+
+$nav-link-margin: 1rem;
+$nav-link-margin-alt: $nav-link-margin / 2;
+
+.navbar-wrapper {
+    background-color: whitesmoke;
+    box-shadow: 0 0.25rem 0.2rem var(--av-cl-shadow);
+    padding: 1.5rem;
+}
+
+.navbar {
+    background-color: white;
+    border: 1px solid var(--av-cl-border);
+    border-radius: .25rem;
+}
+
+.content {
+    display: flex;
+    flex: auto;
+    //flex-flow: row wrap;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: .5rem 1rem;
+
+    & > .logo-wrapper {
+        order: 1;
+        flex-grow: 0;
+    }
+
+    & > .navigation-wrapper {
+        order: 3;
+        flex-grow: 1;
+        flex-basis: 100%;
+        
+        margin: 0 .5rem;
+        border-left: revert;
+        border-right: revert;
+        border-top: solid 1px var(--av-cl-border);
+        border-bottom: solid 1px var(--av-cl-border);
+    }
+
+    & > .profile-wrapper {
+        order: 2;
+        flex-grow: 0;
+    }
+    
+    & > .toggle-wrapper {
+        order: 4;
+        flex-grow: 0;
+    }
+}
+
+.toggle {
+    display: block;
+    border-radius: 1rem;
+}
+
+.links {
+    display: flex;
+    flex: auto;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    
+    &.hide {
+        display: none;
+    }
+    
+    height: 100%;
+    
+    & > .link {
+        background-color: antiquewhite;
+        display: block;
+        flex-grow: 1;
+        text-align: center;
+        margin: $nav-link-margin-alt 0 0 0;
+        padding: 1rem;
+    }
+    
+    & .link:last-child {
+        margin: $nav-link-margin-alt 0 $nav-link-margin-alt 0;
+    }
+}
+
+@include width-min($width-md){
+    
+    .content {
+        //flex-direction: row;
+        flex-wrap: nowrap;
+        //align-items: center;
+        //justify-content: space-evenly;
+
+        & > .logo-wrapper {
+            order: 1;
+        }
+        
+        & > .navigation-wrapper {
+            order: 2;
+            border-left: solid 1px var(--av-cl-border);
+            border-right: solid 1px var(--av-cl-border);
+            border-top: revert;
+            border-bottom: revert;
+        }
+        
+        & > .profile-wrapper {
+            order: 3;
+        }
+    }
+    
+    .links {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: space-evenly;
+        
+        & > .link {
+            margin: 0 0 0 $nav-link-margin;
+        }
+        
+        & .link:last-child {
+            margin: 0 $nav-link-margin;
+        }
+    }
+    
+    .toggle {
+        display: none;
+    }
+     
+}

@@ -1,0 +1,30 @@
+﻿$width-xs: 0;
+$width-sm: 576px;
+$width-md: 768px;
+$width-lg: 992px;
+$width-xl: 1200px;
+$width-xxl: 1400px;
+
+@mixin width-min($width) {
+    @media (min-width: $width) {
+        @content
+    }
+}
+
+@mixin width-max($width) {
+    @media (min-width: $width) {
+        @content
+    }
+}
+
+@mixin width-equal($width) {
+    @media (min-width: $width) and (max-width: $width) {
+        @content
+    }
+}
+
+@mixin width-between($low, $high) {
+    @media (min-width: $low) and (max-width: $high) {
+        @content
+    }
+}

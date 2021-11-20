@@ -1,44 +1,108 @@
-.wrapper {
-    background-color: whitesmoke;
-    box-shadow: 0 0.25rem 0.2rem var(--av-cl-shadow);
-    padding: 1.5rem;
+.navbar-wrapper {
+  background-color: whitesmoke;
+  box-shadow: 0 0.25rem 0.2rem var(--av-cl-shadow);
+  padding: 1.5rem;
 }
 
-nav {
-    background-color: white;
-    border: 1px solid var(--av-cl-border);
-    border-radius: .25rem;
+.navbar {
+  background-color: white;
+  border: 1px solid var(--av-cl-border);
+  border-radius: 0.25rem;
 }
 
-nav > div {
+.content {
+  display: flex;
+  flex: auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 0.5rem 1rem;
+}
+.content > .logo-wrapper {
+  order: 1;
+  flex-grow: 0;
+}
+.content > .navigation-wrapper {
+  order: 3;
+  flex-grow: 1;
+  flex-basis: 100%;
+  margin: 0 0.5rem;
+  border-left: revert;
+  border-right: revert;
+  border-top: solid 1px var(--av-cl-border);
+  border-bottom: solid 1px var(--av-cl-border);
+}
+.content > .profile-wrapper {
+  order: 2;
+  flex-grow: 0;
+}
+.content > .toggle-wrapper {
+  order: 4;
+  flex-grow: 0;
+}
+
+.toggle {
+  border-radius: 1rem;
+}
+
+.links {
+  display: flex;
+  flex: auto;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  height: 100%;
+}
+.links.hide {
+  display: none;
+}
+.links > .link {
+  background-color: antiquewhite;
+  display: block;
+  flex-grow: 1;
+  text-align: center;
+  margin: 0.5rem 0 0 0;
+  padding: 1rem;
+}
+.links .link:last-child {
+  margin: 0.5rem 0 0.5rem 0;
+}
+
+@media (min-width: 768px) {
+  .content {
+    flex-wrap: nowrap;
+  }
+  .content > .logo-wrapper {
+    order: 1;
+  }
+  .content > .navigation-wrapper {
+    order: 2;
     border-left: solid 1px var(--av-cl-border);
     border-right: solid 1px var(--av-cl-border);
-    padding-left: 1rem;
-    padding-right: 1rem;
-    margin-left: 1rem;
-    margin-right: 1rem;
-    width: 100%
+    border-top: revert;
+    border-bottom: revert;
+  }
+  .content > .profile-wrapper {
+    order: 3;
+  }
+
+  .links {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  .links > .link {
+    margin: 0 0 0 1rem;
+  }
+  .links .link:last-child {
+    margin: 0 1rem;
+  }
+
+  .toggle {
+    display: none;
+  }
 }
 
-nav .brand {
-    font-size: 1.25rem;
-    padding-left: .5rem;
-    padding-right: .5rem;
-}
-
-nav ul {
-    width: 100%;
-}
-
-#separator {
-    width: 100%;
-    min-width: max-content;
-}
-
-@media (min-width: 576px) {
-    nav ul {
-        align-items: center;
-    }   
-}
-
-
+/*# sourceMappingURL=Navbar.razor.css.map */

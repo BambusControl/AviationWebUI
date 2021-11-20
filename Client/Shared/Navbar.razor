@@ -1,39 +1,38 @@
-<div class="wrapper">
-    <nav class="navbar navbar-expand-sm bg-light navbar-light">
-        <div class="container-fluid">
-
-            <div class="brand" href="#">II</div>
-
-            @* Toggle for narrow screens *@
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            @* Navigation content *@
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav">
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="forum">Fórum</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="airports">Letiská</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="flightmap">Mapa</a>
-                    </li>
-
-                    <li class="nav-item" id="separator"></li>
-                    
-                    <li class="nav-item">
-                        <ProfileInfo CssClass="nav-link"/>
-                    </li>
-
-                </ul>
+<div class="navbar-wrapper">
+    <nav class="navbar">
+        <div class="content">
+            
+            <div class="logo-wrapper">
+                <div class="brand" href="#">II</div>
             </div>
+            
+            <div class="navigation-wrapper collapse" id="blabla">
+                <div class="links">
+                    
+                    <a class="link" href="forum">Fórum</a>
 
+                    <a class="link" href="airports">Letiská</a>
+
+                    <a class="link" href="flightmap">Mapa</a>
+                    
+                </div>
+            </div>
+            
+            <div class="profile-wrapper">
+                <ProfileInfo CssClass="nav-link"/>
+            </div>
+            
+            <div class="toggle-wrapper">
+                <button class="toggle" type="button" data-bs-toggle="collapse" data-bs-target=".navigation-wrapper" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="toggle-icon"></span>
+                </button>
+            </div>
+            
         </div>
     </nav>
 </div>
+
+@code 
+{
+    private StrToggle _hideLinks = new StrToggle("hide");
+}

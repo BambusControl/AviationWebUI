@@ -7,6 +7,7 @@
     <ServiceWorkerAssetsManifest>service-worker-assets.js</ServiceWorkerAssetsManifest>
     <EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
     <ScopedCssEnabled>true</ScopedCssEnabled>
+    <UserSecretsId>5b0e90eb-5dad-4523-bb98-347fecce65ee</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -19,7 +20,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="Shared\Navbar.razor.scss" />
     <Content Include="wwwroot\.ignore\avatar.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Pages" />
+    <Folder Include="wwwroot\js\" />
   </ItemGroup>
 
 </Project>
